@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ResumeMatch | Automated Resume Screener</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            ResumeMatch
+        </div>
+
+        <div class="header-text">
+            Automated Resume Screener & Skill-Matcher
+        </div>
+
+    </header>
+
+
+    <main class="main">
+
+        <section class="hero">
+
+            <h1>
+                Find the Right Candidate Faster
+            </h1>
+
+            <p>
+                Upload a resume and compare the candidate's skills
+                with the requirements of a job description.
+            </p>
+
+        </section>
+
+
+        <section class="upload-box">
+
+            <h2>Analyze a Resume</h2>
+
+            <p class="section-description">
+                Enter the job requirements and upload the candidate's resume.
+            </p>
+
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+
+
+                <label for="job_description">
+                    Job Description
+                </label>
+
+                <textarea id="job_description" name="job_description"
+                    placeholder="Example: We are looking for a web developer with skills in HTML, CSS, JavaScript, Python, SQL and React..."
+                    required></textarea>
+
+
+                <label for="resume">
+                    Resume PDF
+                </label>
+
+                <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+
+                <button type="submit">
+                    Analyze Resume
+                </button>
+
+            </form>
+
+            <p class="format">
+                Only PDF resumes are supported.
+            </p>
+
+        </section>
+
+
+        <section class="features">
+
+            <div class="feature-card">
+
+                <h3>📄 Resume Analysis</h3>
+
+                <p>
+                    Extract text from uploaded PDF resumes automatically.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h3>🔍 Skill Detection</h3>
+
+                <p>
+                    Identify technical skills mentioned in the resume.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h3>📊 Match Score</h3>
+
+                <p>
+                    Compare resume skills with job requirements
+                    and calculate a match percentage.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>
+            Automated Resume Screener & Skill-Matcher
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
